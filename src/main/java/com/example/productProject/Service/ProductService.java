@@ -33,8 +33,7 @@ public class ProductService {
     public Product updateProduct(long id, Product product) {
 
         Product existingProduct = productRepo.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException("no such product exists with id " + id));
+                .orElseThrow(() -> new RuntimeException("Product not found with id " + id));
 
         existingProduct.setProductName(product.getProductName());
         existingProduct.setDescription(product.getDescription());
