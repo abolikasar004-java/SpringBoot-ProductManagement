@@ -34,7 +34,7 @@ public class ProductService {
 
         Product existingProduct = productRepo.findById(id)
                 .orElseThrow(() ->
-                        new RuntimeException("Product not found with id " + id));
+                        new RuntimeException("no such product exists with id " + id));
 
         existingProduct.setProductName(product.getProductName());
         existingProduct.setDescription(product.getDescription());
